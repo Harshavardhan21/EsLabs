@@ -1,0 +1,1 @@
+.\hexatobcd.o: hexatobcd.s

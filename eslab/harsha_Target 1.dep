@@ -1,0 +1,16 @@
+Dependencies for Project 'harsha', Target 'Target 1': (DO NOT MODIFY !)
+F (.\packtounpack.s)(0x5E37E32E)()
+F (.\hexatobcd.s)(0x5E416248)(--cpu Cortex-M3 --pd "__EVAL SETA 1" -g --apcs=interwork -I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\NXP\LPC17xx--list .\hexatobcd.lst --xref -o .\hexatobcd.o --depend .\hexatobcd.d)
+F (.\bcdtoascii.s)(0x5E3848CC)()
+F (.\palindrome.s)(0x5E4006A7)(--cpu Cortex-M3 --pd "__EVAL SETA 1" -g --apcs=interwork -I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\NXP\LPC17xx--list .\palindrome.lst --xref -o .\palindrome.o --depend .\palindrome.d)
+F (.\smallest.s)(0x5E41F1DD)(--cpu Cortex-M3 --pd "__EVAL SETA 1" -g --apcs=interwork -I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\NXP\LPC17xx--list .\smallest.lst --xref -o .\smallest.o --depend .\smallest.d)
+F (.\add2-32bit.s)(0x5E3CF0EB)(--cpu Cortex-M3 --pd "__EVAL SETA 1" -g --apcs=interwork -I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\NXP\LPC17xx--list .\add2-32bit.lst --xref -o .\add2-32bit.o --depend .\add2-32bit.d)
+F (.\mul2-32bit.s)(0x5E414DF6)(--cpu Cortex-M3 --pd "__EVAL SETA 1" -g --apcs=interwork -I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\NXP\LPC17xx--list .\mul2-32bit.lst --xref -o .\mul2-32bit.o --depend .\mul2-32bit.d)
+F (.\factorial.s)(0x5E3E939C)(--cpu Cortex-M3 --pd "__EVAL SETA 1" -g --apcs=interwork -I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\NXP\LPC17xx--list .\factorial.lst --xref -o .\factorial.o --depend .\factorial.d)
+F (.\evenorodd.s)(0x5E3E9BE4)(--cpu Cortex-M3 --pd "__EVAL SETA 1" -g --apcs=interwork -I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\NXP\LPC17xx--list .\evenorodd.lst --xref -o .\evenorodd.o --depend .\evenorodd.d)
+F (.\largest.s)(0x5E400784)(--cpu Cortex-M3 --pd "__EVAL SETA 1" -g --apcs=interwork -I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\NXP\LPC17xx--list .\largest.lst --xref -o .\largest.o --depend .\largest.d)
+F (.\fibonacci.s)(0x5E419B9F)(--cpu Cortex-M3 --pd "__EVAL SETA 1" -g --apcs=interwork -I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\NXP\LPC17xx--list .\fibonacci.lst --xref -o .\fibonacci.o --depend .\fibonacci.d)
+F (.\bubble.s)(0x5E41A77E)(--cpu Cortex-M3 --pd "__EVAL SETA 1" -g --apcs=interwork -I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\NXP\LPC17xx--list .\bubble.lst --xref -o .\bubble.o --depend .\bubble.d)
+F (.\overlap.s)(0x5E41625B)(--cpu Cortex-M3 --pd "__EVAL SETA 1" -g --apcs=interwork -I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\NXP\LPC17xx--list .\overlap.lst --xref -o .\overlap.o --depend .\overlap.d)
+F (.\arraysum.s)(0x5E491B85)(--cpu Cortex-M3 --pd "__EVAL SETA 1" -g --apcs=interwork -I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\NXP\LPC17xx--list .\arraysum.lst --xref -o .\arraysum.o --depend .\arraysum.d)
+F (.\untop.s)(0x5E4931B2)(--cpu Cortex-M3 --pd "__EVAL SETA 1" -g --apcs=interwork -I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\NXP\LPC17xx--list .\untop.lst --xref -o .\untop.o --depend .\untop.d)

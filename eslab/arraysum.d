@@ -1,0 +1,1 @@
+.\arraysum.o: arraysum.s

@@ -1,0 +1,4 @@
+Dependencies for Project 'new', Target 'Target 1': (DO NOT MODIFY !)
+F (.\packtounpack.s)(0x5E37E32E)()
+F (.\hexatobcd.s)(0x5E37DEA6)()
+F (.\bcdtoascii.s)(0x5E3848CC)(--cpu Cortex-M3 --pd "__EVAL SETA 1" -g --apcs=interwork -I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\NXP\LPC17xx--list .\bcdtoascii.lst --xref -o .\bcdtoascii.o --depend .\bcdtoascii.d)

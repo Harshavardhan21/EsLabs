@@ -1,0 +1,1 @@
+.\evenorodd.o: evenorodd.s

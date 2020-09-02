@@ -1,0 +1,151 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 AREA             RESET,DATA,READONLY
+    2 00000000                 EXPORT           __Vectors
+    3 00000000         __Vectors
+    4 00000000 10001000        DCD              0X10001000
+    5 00000004 00000000        DCD              Reset_Handler
+    6 00000008                 ALIGN
+    7 00000008                 AREA             mycode,CODE,READONLY
+    8 00000000                 ENTRY
+    9 00000000                 EXPORT           Reset_Handler
+   10 00000000         Reset_Handler
+   11 00000000 480F            LDR              R0,=NUM     ;
+   12 00000002 F8DF 8040       LDR              R8,=RESULT
+   13 00000006 6801            LDR              R1,[R0]
+   14 00000008 460A            MOV              R2,R1       ;
+   15 0000000A F100 0004       ADD              R0,#4
+   16 0000000E F04F 0504       MOV              R5,#4
+   17 00000012         LOOP
+   18 00000012 6803            LDR              R3,[R0]
+   19 00000014 429A            CMP              R2,R3
+   20 00000016 DC00            BGT              F
+   21 00000018 461A            MOV              R2,R3
+   22 0000001A         F
+   23 0000001A F100 0004       ADD              R0,#4
+   24 0000001E F1A5 0501       SUB              R5,#1
+   25 00000022 2D00            CMP              R5,#0
+   26 00000024 D1F5            BNE              LOOP
+   27 00000026 F8C8 2000       STR              R2,[R8]
+   28 0000002A         STOP
+   29 0000002A E7FE            B                STOP
+   30 0000002C 00000002 
+              00000003 
+              00000012 
+              00000008 
+              00000009 NUM     DCD              0x2,0x3,0x12,0x8,0x9
+   31 00000040 00000000 
+              00000000         AREA             mydata,DATA,READWRITE
+   32 00000000 00000000 
+                       RESULT  DCD              0
+   33 00000004                 END
+Command Line: --debug --xref --cpu=Cortex-M3 --apcs=interwork --depend=.\larges
+t.d -o.\largest.o -IC:\Keil\ARM\RV31\INC -IC:\Keil\ARM\CMSIS\Include -IC:\Keil\
+ARM\Inc\NXP\LPC17xx --predefine="__EVAL SETA 1" --list=.\largest.lst largest.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+RESET 00000000
+
+Symbol: RESET
+   Definitions
+      At line 1 in file largest.s
+   Uses
+      None
+Comment: RESET unused
+__Vectors 00000000
+
+Symbol: __Vectors
+   Definitions
+      At line 3 in file largest.s
+   Uses
+      At line 2 in file largest.s
+Comment: __Vectors used once
+2 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+F 0000001A
+
+Symbol: F
+   Definitions
+      At line 22 in file largest.s
+   Uses
+      At line 20 in file largest.s
+Comment: F used once
+LOOP 00000012
+
+Symbol: LOOP
+   Definitions
+      At line 17 in file largest.s
+   Uses
+      At line 26 in file largest.s
+Comment: LOOP used once
+NUM 0000002C
+
+Symbol: NUM
+   Definitions
+      At line 30 in file largest.s
+   Uses
+      At line 11 in file largest.s
+Comment: NUM used once
+Reset_Handler 00000000
+
+Symbol: Reset_Handler
+   Definitions
+      At line 10 in file largest.s
+   Uses
+      At line 5 in file largest.s
+      At line 9 in file largest.s
+
+STOP 0000002A
+
+Symbol: STOP
+   Definitions
+      At line 28 in file largest.s
+   Uses
+      At line 29 in file largest.s
+Comment: STOP used once
+mycode 00000000
+
+Symbol: mycode
+   Definitions
+      At line 7 in file largest.s
+   Uses
+      None
+Comment: mycode unused
+6 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+RESULT 00000000
+
+Symbol: RESULT
+   Definitions
+      At line 32 in file largest.s
+   Uses
+      At line 12 in file largest.s
+Comment: RESULT used once
+mydata 00000000
+
+Symbol: mydata
+   Definitions
+      At line 31 in file largest.s
+   Uses
+      None
+Comment: mydata unused
+2 symbols
+343 symbols in table

@@ -1,0 +1,185 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 AREA             RESET,DATA,READONLY
+    2 00000000                 EXPORT           __Vectors
+    3 00000000         __Vectors
+    4 00000000 10001000        DCD              0X10001000
+    5 00000004 00000000        DCD              Reset_Handler
+    6 00000008                 ALIGN
+    7 00000008                 AREA             mycode,CODE,READONLY
+    8 00000000                 ENTRY
+    9 00000000                 EXPORT           Reset_Handler
+   10 00000000         Reset_Handler
+   11 00000000 480D            LDR              R0,=NUM1
+   12 00000002 4D0E            LDR              R5,=NUM2
+   13 00000004 F8DF 9038       LDR              R9,=RESULT
+   14 00000008 682C            LDR              R4,[R5]
+   15 0000000A 6801            LDR              R1,[R0]
+   16 0000000C F04F 020A       MOV              R2,#0XA
+   17 00000010 F04F 030F       MOV              R3,#0XF
+   18 00000014         LOOP
+   19 00000014 42A1            CMP              R1,R4
+   20 00000016 D302            BCC              NEXT
+   21 00000018 EBA1 0104       SUB              R1,R4
+   22 0000001C E7FA            B                LOOP
+   23 0000001E         NEXT
+   24 0000001E 2900            CMP              R1,#0
+   25 00000020 D002            BEQ              NE
+   26 00000022 F8C9 3000       STR              R3,[R9]
+   27 00000026         HERE
+   28 00000026 E7FE            B                HERE
+   29 00000028         NE
+   30 00000028 F8C9 2000       STR              R2,[R9]
+   31 0000002C         STOP
+   32 0000002C E7FE            B                STOP
+   33 0000002E 00 00 00000021 
+                       NUM1    DCD              0X21
+   34 00000034 00000002 
+                       NUM2    DCD              0X2
+   35 00000038 00000000 
+              00000000 
+              00000000         AREA             mydata,DATA,READWRITE
+   36 00000000 00000000 
+                       RESULT  DCD              0
+   37 00000004                 END
+Command Line: --debug --xref --cpu=Cortex-M3 --apcs=interwork --depend=.\evenor
+odd.d -o.\evenorodd.o -IC:\Keil\ARM\RV31\INC -IC:\Keil\ARM\CMSIS\Include -IC:\K
+eil\ARM\Inc\NXP\LPC17xx --predefine="__EVAL SETA 1" --list=.\evenorodd.lst even
+orodd.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+RESET 00000000
+
+Symbol: RESET
+   Definitions
+      At line 1 in file evenorodd.s
+   Uses
+      None
+Comment: RESET unused
+__Vectors 00000000
+
+Symbol: __Vectors
+   Definitions
+      At line 3 in file evenorodd.s
+   Uses
+      At line 2 in file evenorodd.s
+Comment: __Vectors used once
+2 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+HERE 00000026
+
+Symbol: HERE
+   Definitions
+      At line 27 in file evenorodd.s
+   Uses
+      At line 28 in file evenorodd.s
+Comment: HERE used once
+LOOP 00000014
+
+Symbol: LOOP
+   Definitions
+      At line 18 in file evenorodd.s
+   Uses
+      At line 22 in file evenorodd.s
+Comment: LOOP used once
+NE 00000028
+
+Symbol: NE
+   Definitions
+      At line 29 in file evenorodd.s
+   Uses
+      At line 25 in file evenorodd.s
+Comment: NE used once
+NEXT 0000001E
+
+Symbol: NEXT
+   Definitions
+      At line 23 in file evenorodd.s
+   Uses
+      At line 20 in file evenorodd.s
+Comment: NEXT used once
+NUM1 00000030
+
+Symbol: NUM1
+   Definitions
+      At line 33 in file evenorodd.s
+   Uses
+      At line 11 in file evenorodd.s
+Comment: NUM1 used once
+NUM2 00000034
+
+Symbol: NUM2
+   Definitions
+      At line 34 in file evenorodd.s
+   Uses
+      At line 12 in file evenorodd.s
+Comment: NUM2 used once
+Reset_Handler 00000000
+
+Symbol: Reset_Handler
+   Definitions
+      At line 10 in file evenorodd.s
+   Uses
+      At line 5 in file evenorodd.s
+      At line 9 in file evenorodd.s
+
+STOP 0000002C
+
+
+
+
+ARM Macro Assembler    Page 2 Alphabetic symbol ordering
+Relocatable symbols
+
+Symbol: STOP
+   Definitions
+      At line 31 in file evenorodd.s
+   Uses
+      At line 32 in file evenorodd.s
+Comment: STOP used once
+mycode 00000000
+
+Symbol: mycode
+   Definitions
+      At line 7 in file evenorodd.s
+   Uses
+      None
+Comment: mycode unused
+9 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+RESULT 00000000
+
+Symbol: RESULT
+   Definitions
+      At line 36 in file evenorodd.s
+   Uses
+      At line 13 in file evenorodd.s
+Comment: RESULT used once
+mydata 00000000
+
+Symbol: mydata
+   Definitions
+      At line 35 in file evenorodd.s
+   Uses
+      None
+Comment: mydata unused
+2 symbols
+346 symbols in table

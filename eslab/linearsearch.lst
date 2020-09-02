@@ -1,0 +1,189 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 AREA             RESET, DATA, READONLY
+    2 00000000                 EXPORT           __Vectors
+    3 00000000         
+    4 00000000         __Vectors
+    5 00000000 40001000        DCD              0x40001000  ; stack pointer val
+                                                            ue when stack is em
+                                                            pty
+    6 00000004 00000000        DCD              Reset_Handler ; reset vector
+    7 00000008         
+    8 00000008                 ALIGN
+    9 00000008                 AREA             mycode, CODE, READONLY
+   10 00000000                 ENTRY
+   11 00000000                 EXPORT           Reset_Handler
+   12 00000000         
+   13 00000000         Reset_Handler
+   14 00000000         
+   15 00000000 4815            LDR              R0,=INPUT   ; R0 HOLDING INPUT 
+                                                            ARRAY BASE ADDRESS
+   16 00000002 4916            LDR              R1,=POSITION ; RESULT WRITTING 
+                                                            SPACE
+   17 00000004 F04F 030A       MOV              R3, #10     ; COUNTER FOR LOOP
+   18 00000008 F04F 0407       MOV              R4, #7      ; ELEMENT TO BE SEA
+                                                            RCHED
+   19 0000000C F04F 0601       MOV              R6, #1      ; INDICATOR VARIABL
+                                                            E FOR PRESENCE OF E
+                                                            LEMENT
+   20 00000010 F04F 0700       MOV              R7, #0      ; COUNTER FOR POSIT
+                                                            ION IN ARRAY
+   21 00000014 F850 5B04 
+                       LOOP    LDR              R5,[R0],#4  ; GET ARRAY ELEMENT
+                                                             IN R5 AND UPDATE P
+                                                            OINTER TO NEXT
+   22 00000018 F107 0701       ADD              R7,#1       ; POSITION COUNTER 
+                                                            UPDATION
+   23 0000001C 42AC            CMP              R4,R5       ; COMPARISION TO CH
+                                                            ECK EQUALITY
+   24 0000001E D002            BEQ              LABEL1      ; BRANCH IF EQUAL T
+                                                            O LABEL1
+   25 00000020 3B01            SUBS             R3,#1
+   26 00000022 D1F7            BNE              LOOP
+   27 00000024 E002            B                HERE
+   28 00000026 F841 6B04 
+                       LABEL1  STR              R6,[R1], #4 ; STORE 1 IF ELEMEN
+                                                            T PRESENT
+   29 0000002A 600F            STR              R7,[R1]     ; STORE ELEMENT POS
+                                                            ITION IN ARRAY
+   30 0000002C E7FE    HERE    B                HERE        ; STAY HERE
+   31 0000002E         
+   32 0000002E 00 00 00000017 
+              00000043 
+              00000059 
+              0000002D 
+              00000015 
+              00000050 
+              0000004C 
+              0000002D 
+              00000022 
+              00000009 INPUT   DCD              23,67,89,45,21,80,76,45,34,9 
+                                                            ;INPUT ARRAY 
+
+
+
+ARM Macro Assembler    Page 2 
+
+
+   33 00000058         
+   34 00000058 00000000 
+              00000000         AREA             MYDATA,DATA,READWRITE
+   35 00000000 00000000 
+                       POSITION
+                               DCD              0           ; FINDING RESULT IN
+                                                             TERMS OF EXISTENCE
+                                                             AND POSITIONING IN
+                                                             ARRAY
+   36 00000004                 END
+Command Line: --debug --xref --cpu=Cortex-M3 --apcs=interwork --depend=.\linear
+search.d -o.\linearsearch.o -IC:\Keil\ARM\RV31\INC -IC:\Keil\ARM\CMSIS\Include 
+-IC:\Keil\ARM\Inc\NXP\LPC17xx --predefine="__EVAL SETA 1" --list=.\linearsearch
+.lst linearsearch.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+RESET 00000000
+
+Symbol: RESET
+   Definitions
+      At line 1 in file linearsearch.s
+   Uses
+      None
+Comment: RESET unused
+__Vectors 00000000
+
+Symbol: __Vectors
+   Definitions
+      At line 4 in file linearsearch.s
+   Uses
+      At line 2 in file linearsearch.s
+Comment: __Vectors used once
+2 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+HERE 0000002C
+
+Symbol: HERE
+   Definitions
+      At line 30 in file linearsearch.s
+   Uses
+      At line 27 in file linearsearch.s
+      At line 30 in file linearsearch.s
+
+INPUT 00000030
+
+Symbol: INPUT
+   Definitions
+      At line 32 in file linearsearch.s
+   Uses
+      At line 15 in file linearsearch.s
+Comment: INPUT used once
+LABEL1 00000026
+
+Symbol: LABEL1
+   Definitions
+      At line 28 in file linearsearch.s
+   Uses
+      At line 24 in file linearsearch.s
+Comment: LABEL1 used once
+LOOP 00000014
+
+Symbol: LOOP
+   Definitions
+      At line 21 in file linearsearch.s
+   Uses
+      At line 26 in file linearsearch.s
+Comment: LOOP used once
+Reset_Handler 00000000
+
+Symbol: Reset_Handler
+   Definitions
+      At line 13 in file linearsearch.s
+   Uses
+      At line 6 in file linearsearch.s
+      At line 11 in file linearsearch.s
+
+mycode 00000000
+
+Symbol: mycode
+   Definitions
+      At line 9 in file linearsearch.s
+   Uses
+      None
+Comment: mycode unused
+6 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+MYDATA 00000000
+
+Symbol: MYDATA
+   Definitions
+      At line 34 in file linearsearch.s
+   Uses
+      None
+Comment: MYDATA unused
+POSITION 00000000
+
+Symbol: POSITION
+   Definitions
+      At line 35 in file linearsearch.s
+   Uses
+      At line 16 in file linearsearch.s
+Comment: POSITION used once
+2 symbols
+343 symbols in table

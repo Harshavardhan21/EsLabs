@@ -1,0 +1,1 @@
+.\addandstore.o: addandstore.s

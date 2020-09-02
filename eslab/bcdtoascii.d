@@ -1,0 +1,1 @@
+.\bcdtoascii.o: bcdtoascii.s

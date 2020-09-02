@@ -1,0 +1,143 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 AREA             RESET,DATA,READONLY
+    2 00000000                 EXPORT           __Vectors
+    3 00000000         __Vectors
+    4 00000000 10001000        DCD              0X10001000
+    5 00000004 00000000        DCD              Reset_Handler
+    6 00000008                 ALIGN
+    7 00000008                 AREA             mycode,CODE,READONLY
+    8 00000000                 ENTRY
+    9 00000000                 EXPORT           Reset_Handler
+   10 00000000         Reset_Handler
+   11 00000000 480D            LDR              R0,=NUM
+   12 00000002 6801            LDR              R1,[R0]
+   13 00000004 F04F 020F       LDR              R2,=0X0F
+   14 00000008 F04F 0300       LDR              R3,=0X00000000
+   15 0000000C F04F 0401       MOV              R4,#1
+   16 00000010 F04F 050F       LDR              R5,=0X0F
+   17 00000014 F04F 0600       LDR              R6,=0X00000000
+   18 00000018 4F08            LDR              R7,=RESULT
+   19 0000001A         
+   20 0000001A EA01 0802 
+                       UP      AND              R8,R1,R2
+   21 0000001E FB08 9904       MLA              R9,R8,R4,R9
+   22 00000022 FB04 F405       MUL              R4,R5
+   23 00000026 EA4F 1111       LSR              R1,4
+   24 0000002A 2900            CMP              R1,#0
+   25 0000002C D1F5            BNE              UP
+   26 0000002E F8C7 9000       STR              R9,[R7]
+   27 00000032         
+   28 00000032         
+   29 00000032         STOP
+   30 00000032 E7FE            B                STOP
+   31 00000034 00BC614E 
+                       NUM     DCD              0X00BC614E
+   32 00000038 00000000 
+              00000000         AREA             mydata,DATA,READWRITE
+   33 00000000 00000000 
+                       RESULT  DCD              0
+   34 00000004                 END
+Command Line: --debug --xref --cpu=Cortex-M3 --apcs=interwork --depend=.\hexato
+bcd.d -o.\hexatobcd.o -IC:\Keil\ARM\RV31\INC -IC:\Keil\ARM\CMSIS\Include -IC:\K
+eil\ARM\Inc\NXP\LPC17xx --predefine="__EVAL SETA 1" --list=.\hexatobcd.lst hexa
+tobcd.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+RESET 00000000
+
+Symbol: RESET
+   Definitions
+      At line 1 in file hexatobcd.s
+   Uses
+      None
+Comment: RESET unused
+__Vectors 00000000
+
+Symbol: __Vectors
+   Definitions
+      At line 3 in file hexatobcd.s
+   Uses
+      At line 2 in file hexatobcd.s
+Comment: __Vectors used once
+2 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+NUM 00000034
+
+Symbol: NUM
+   Definitions
+      At line 31 in file hexatobcd.s
+   Uses
+      At line 11 in file hexatobcd.s
+Comment: NUM used once
+Reset_Handler 00000000
+
+Symbol: Reset_Handler
+   Definitions
+      At line 10 in file hexatobcd.s
+   Uses
+      At line 5 in file hexatobcd.s
+      At line 9 in file hexatobcd.s
+
+STOP 00000032
+
+Symbol: STOP
+   Definitions
+      At line 29 in file hexatobcd.s
+   Uses
+      At line 30 in file hexatobcd.s
+Comment: STOP used once
+UP 0000001A
+
+Symbol: UP
+   Definitions
+      At line 20 in file hexatobcd.s
+   Uses
+      At line 25 in file hexatobcd.s
+Comment: UP used once
+mycode 00000000
+
+Symbol: mycode
+   Definitions
+      At line 7 in file hexatobcd.s
+   Uses
+      None
+Comment: mycode unused
+5 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+RESULT 00000000
+
+Symbol: RESULT
+   Definitions
+      At line 33 in file hexatobcd.s
+   Uses
+      At line 18 in file hexatobcd.s
+Comment: RESULT used once
+mydata 00000000
+
+Symbol: mydata
+   Definitions
+      At line 32 in file hexatobcd.s
+   Uses
+      None
+Comment: mydata unused
+2 symbols
+342 symbols in table

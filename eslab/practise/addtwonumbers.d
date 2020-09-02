@@ -1,0 +1,1 @@
+.\addtwonumbers.o: addtwonumbers.s
